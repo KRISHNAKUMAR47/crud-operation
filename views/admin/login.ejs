@@ -1,0 +1,28 @@
+<%- include('../layouts/header.ejs') %>
+
+<h1>Admin Login</h1>
+
+<%
+  if(typeof message !== 'undefined'){
+    %>
+    <h4><%= message %></h4>
+    <%
+  }
+%>
+
+<form action="" method="post">
+  <input type="email" name="email" required placeholder="Enter email">
+  <br><br>
+  <input type="password" name="password" required placeholder="Enter passsword">
+  <br><br>
+  <input type="submit" value="Login">
+  <br><br>
+
+</form>
+
+
+
+
+
+
+<%- include('../layouts/header.ejs') %>
