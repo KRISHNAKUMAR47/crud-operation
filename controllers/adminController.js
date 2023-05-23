@@ -1,6 +1,16 @@
 const userModel = require("../models/userModel");
 const User = require("../models/userModel");
 const bcrypt = require('bcrypt');
+const randomstring = require("randomstring")
+
+const securePassword = async(password)=>{
+    try {
+        const passwordHash =await bcrypt.hash(password,10);
+        return passwordHash;
+    }catch (error){
+    console.log(error.message);
+    }
+}
 
 const loadlogin = async(req,res)=>{
     try {
@@ -71,7 +81,7 @@ const logout = async(req,res)=>{
     }
 }
 
-const limit = 2;
+const limit = 4;
 
 const adminDashboard = async(req,res)=>{
     try {
@@ -111,7 +121,8 @@ const adminDashboard = async(req,res)=>{
         res.render('dashboard',{
             users:userData,
             totalPages: Math.ceil(count/limit),
-            currentPage: page
+            currentPage: page,
+            previous:page-1
             
         });
 
@@ -218,5 +229,6 @@ module.exports = {
     addUser,
     editUserLoad,
     updateUsers,
-    deleteUser
+    deleteUser,
+    securePassword
 }

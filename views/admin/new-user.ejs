@@ -1,29 +1,71 @@
 <%- include('../layouts/header.ejs') %>
 
-<h1>Add New User</h1>
 
-<form action="" method="post" enctype="multipart/form-data">
-   <input type="text"name="name" placeholder="Enter Name" required>
-   <br><br>
-   <input type="email"name="email" placeholder="Enter email" required>
-   <br><br>
-   <input type="text"name="mno" placeholder="Enter Mobile" required>
-   <br><br>
-   <input type="file" name="image" require>
-   <br><br>
-   <input type="submit" value="Add User">
-   <br><br>
-</form>
 
-<% 
- 
- if(typeof message !== 'undefined'){
-   %>
-   <p style="color:rgb(255, 149, 0);"> <%= message %></p>
-   <%
- }
+<section class="vh-100" style="background-color: #9A616D;">
+  <div class="container py-3 h-70">
+    <div class="row d-flex justify-content-center align-items-center h-70">
+      <div class="col col-xl-9">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+
+                <form action="" method="post" enctype="multipart/form-data">
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                    <span class="h1 fw-bold mb-0">Add New User</span>
+                  </div>
+                  
+                  
+                  <div class="form-outline mb-3">
+                    <label class="form-label" for="form2Example17">Name</label>
+                      <input type="text" id="form2Example17" name="name" class="form-control form-control-lg" required />
+                  </div>
+
+                  <div class="form-outline mb-3">
+                    <label class="form-label" for="form2Example17">Email address</label>
+                    <input type="email" id="form2Example17" name="email" class="form-control form-control-lg" required />
+                  </div>
+
+                  <div class="form-outline mb-3">
+                    <label class="form-label" for="form2Example27">Mobile Number</label>
+                    <input type="text" id="form2Example27" name="mno" class="form-control form-control-lg" required />
+                  </div>
+
+                  <div class="form-outline mb-3">
+                    <label class="form-label" for="form2Example27">Image</label>
+                    <input type="file" id="form2Example27" name="image" class="form-control form-control-lg" required />
+                  </div>
+                
+                       <input type="submit" value="Add User">
+                  
+                </form>
+                <%
+  if(typeof message !== 'undefined'){
+    %>
+    <h4><%= message %></h4>
+    <%
+  }
 %>
 
-<a href="/admin/dashboard">Go Back</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+
+
+
+
+<a href="/admin/dashboard">Go Back</a>
 <%- include('../layouts/footer.ejs') %>

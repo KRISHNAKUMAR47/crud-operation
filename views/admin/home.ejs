@@ -1,7 +1,19 @@
 <%- include('../layouts/header.ejs') %>
-<h1>Welcome, <%= admin.name %></h1>
-<a href="/admin/dashboard">Dashboard</a>
+<center>
+<h1>hello, <%= admin.name %></h1>
+<button style="background-color: green; border-radius: 6px;">
 
+    <a style="color: aliceblue;" href="/admin/dashboard">Dashboard</a>
+</button>
+
+<button style="background-color: red; border-radius: 6px; margin-left: 500px; margin-bottom: 10px;">
+    <a style="color: aliceblue;"  href="/admin/logout">Logout</a>
+</button>
+<style>
+     table, th, td {
+  border: 2px solid black;
+  }
+</style>
 <table style="width: 50%;">
     <tr>
         <td><img src="/userimages/<%= admin.image %> " width="100px" height="100px" alt="<%= admin.image %>" ></td>
@@ -16,6 +28,6 @@
    </tr>
 
 </table>
-<a href="/admin/logout">Logout</a>
 
+</center>
 <%- include("../layouts/footer.ejs") %>

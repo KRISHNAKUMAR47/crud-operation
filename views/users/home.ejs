@@ -1,10 +1,11 @@
 <%- include('../layouts/header.ejs') %>
 
 
- <h3>welcome back, <%= user.name %></h3>
+ <h3>Hello , <%= user.name %></h3>
 
- <table class="table" width="50%"> 
-     <tr>
+
+ <table class="table"  width="50%"> 
+     <tr >
         <td><img src="userimages/<%= user.image %>" width="100px" height="100px" alt="<%= user.image %>"></td>
      </tr>
      <tr>
@@ -30,8 +31,8 @@
  </table>
 
 
-<a href="/edit?id=<%= user._id %>">Edit</a>
+<a href="/edit?id=<%= user._id %>"><button type="button">Edit</button></a>
 <br><br>
- <a href="/logout">Logout</a>
+ <a href="/logout"><button type="button">Logout</button></a>
 
 <%- include('../layouts/footer.ejs') %>
