@@ -13,7 +13,7 @@ const securePassword = async(password)=>{
 const loadRegister = async(req,res)=>{
     try { 
         
-        res.render('registration.ejs',);
+        res.render('register.ejs',);
 
     }catch (error) {
         console.log(error.message);
@@ -39,7 +39,7 @@ const insertUser = async(req,res)=>{
             res.redirect("/login");
          }
          else{
-            res.render('registration',{message:"your registration has been failed."});
+            res.render('register',{message:"your registration has been failed."});
          }
 
     } catch (error){

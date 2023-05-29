@@ -15,6 +15,7 @@ app.use(express.static('public'));
 app.use(express.json())
 app.use(nocache())
 
+
 //for user routes
 const userRoute = require('./routes/userRoute');
 app.use('/',userRoute);
